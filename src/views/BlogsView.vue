@@ -3,7 +3,7 @@
     <div class="blog-cards container">
       <div class="toggle-edit">
         <span>Toggle Editing Post</span>
-        <input type="checkbox" />
+        <input type="checkbox" v-model="editPost" />
       </div>
       <blog-card
         :post="post"
@@ -31,6 +31,14 @@ export default {
   computed: {
     sampleBlogcards() {
       return store.state.sampleBlogCards;
+    },
+    editPost: {
+      get() {
+        return store.state.editPost;
+      },
+      set(payload) {
+        store.commit("toggleEditPost", payload);
+      },
     },
   },
 };

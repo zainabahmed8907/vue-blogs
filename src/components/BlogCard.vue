@@ -1,6 +1,6 @@
 <template>
   <div class="blog-card">
-    <div class="icons">
+    <div v-show="editPost" class="icons">
       <div class="icon">
         <EditIcon class="edit" />
       </div>
@@ -23,9 +23,11 @@
 </template>
 
 <script>
+import store from "@/store";
 import ArrowIcon from "../assets/Icons/arrow-right-light.svg";
 import EditIcon from "../assets/Icons/edit-regular.svg";
 import DeleteIcon from "../assets/Icons/trash-regular.svg";
+
 export default {
   name: "FireBlogsYouTubeBlogCard",
   components: {
@@ -41,6 +43,11 @@ export default {
   mounted() {},
 
   methods: {},
+  computed: {
+    editPost() {
+      return store.state.editPost;
+    },
+  },
 };
 </script>
 
