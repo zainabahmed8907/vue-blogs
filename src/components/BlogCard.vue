@@ -2,37 +2,36 @@
   <div class="blog-card">
     <div class="icons">
       <div class="icon">
-        <Edit class="icon" />
+        <EditIcon class="edit" />
       </div>
       <div class="icon">
-        <Delete class="icon" />
+        <DeleteIcon class="delete" />
       </div>
     </div>
     <img
       :src="require(`../assets/blogCards/${post.blogCoverPhoto}.jpg`)"
-      width="100"
       alt=""
     />
     <div class="info">
       <h4>{{ post.blogTitle }}</h4>
       <h6>{{ post.blogDate }}</h6>
       <router-link class="link" to="#"
-        >View the post <Arrow class="arrow"
+        >View the post <ArrowIcon class="arrow"
       /></router-link>
     </div>
   </div>
 </template>
 
 <script>
-import Arrow from "../assets/Icons/arrow-right-light.svg";
-import Edit from "../assets/Icons/edit-regular.svg";
-import Delete from "../assets/Icons/trash-regular.svg";
+import ArrowIcon from "../assets/Icons/arrow-right-light.svg";
+import EditIcon from "../assets/Icons/edit-regular.svg";
+import DeleteIcon from "../assets/Icons/trash-regular.svg";
 export default {
   name: "FireBlogsYouTubeBlogCard",
   components: {
-    Delete,
-    Edit,
-    Arrow,
+    DeleteIcon,
+    EditIcon,
+    ArrowIcon,
   },
   props: ["post"],
   data() {

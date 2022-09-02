@@ -14,17 +14,29 @@
         </div>
       </div>
     </div>
+    <div class="updates">
+      <div class="container">
+        <h2>Never miss a post. Register your free acccount today!</h2>
+        <router-link class="router-button" to="#"
+          >Register for FireBlogs <ArrowIcon class="arrow arrow-light"
+        /></router-link>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import ArrowIcon from "../assets/Icons/arrow-right-light.svg";
+
 import BlogPost from "@/components/BlogPost";
 import BlogCardVue from "../components/BlogCard.vue";
+import store from "@/store";
 export default {
   name: "HomeView",
   components: {
     BlogPost,
     BlogCardVue,
+    ArrowIcon,
   },
   data() {
     return {
@@ -42,19 +54,12 @@ export default {
           blogCoverPhoto: "beautiful-stories",
         },
       ],
-      sampleBlogCards: [
-        {
-          blogTitle: "Blog Card #1",
-          blogCoverPhoto: "stock-1",
-          blogDate: "May 1, 2022",
-        },
-        {
-          blogTitle: "Blog Card #2",
-          blogCoverPhoto: "stock-2",
-          blogDate: "May 1, 2022",
-        },
-      ],
     };
+  },
+  computed: {
+    sampleBlogCards() {
+      return store.state.sampleBlogCards;
+    },
   },
 };
 </script>
