@@ -2,11 +2,9 @@
   <div class="blog-card">
     <div v-show="editPost" class="icons">
       <div class="icon">
-        <EditIcon class="edit" />
+        <i class="fa fa-edit" id="edit" />
       </div>
-      <div class="icon">
-        <DeleteIcon class="delete" />
-      </div>
+      <div class="icon"><i class="fa fa-trash" id="delete" /></div>
     </div>
     <img
       :src="require(`../assets/blogCards/${post.blogCoverPhoto}.jpg`)"
@@ -16,25 +14,18 @@
       <h4>{{ post.blogTitle }}</h4>
       <h6>{{ post.blogDate }}</h6>
       <router-link class="link" to="#"
-        >View the post <ArrowIcon class="arrow"
-      /></router-link>
+        >View the post <i class="fa fa-angle-right"></i
+      ></router-link>
     </div>
   </div>
 </template>
 
 <script>
 import store from "@/store";
-import ArrowIcon from "../assets/Icons/arrow-right-light.svg";
-import EditIcon from "../assets/Icons/edit-regular.svg";
-import DeleteIcon from "../assets/Icons/trash-regular.svg";
 
 export default {
   name: "FireBlogsYouTubeBlogCard",
-  components: {
-    DeleteIcon,
-    EditIcon,
-    ArrowIcon,
-  },
+
   props: ["post"],
   data() {
     return {};
@@ -83,21 +74,17 @@ export default {
       transition: 0.5s ease all;
       &:hover {
         background-color: #303030;
-        .edit,
-        .delete {
-          path {
-            fill: #fff;
-          }
+        #edit,
+        #delete {
+          color: #fff;
         }
       }
       &:nth-child(1) {
         margin-right: 8px;
       }
-      .edit,
-      .delete {
+      #edit,
+      #delete {
         pointer-events: none;
-        height: 15px;
-        width: auto;
       }
     }
   }

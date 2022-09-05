@@ -18,16 +18,16 @@
       <div class="container">
         <h2>Never miss a post. Register your free acccount today!</h2>
         <router-link class="router-button" to="#"
-          >Register for FireBlogs <ArrowIcon class="arrow arrow-light"
-        /></router-link>
+          >Register for FireBlogs
+          <span class="arrow arrow-light"
+            ><img src="../assets/Icons/arrow-right-light.svg" /></span
+        ></router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ArrowIcon from "../assets/Icons/arrow-right-light.svg";
-
 import BlogPost from "@/components/BlogPost";
 import BlogCardVue from "../components/BlogCard.vue";
 import store from "@/store";
@@ -36,7 +36,6 @@ export default {
   components: {
     BlogPost,
     BlogCardVue,
-    ArrowIcon,
   },
   data() {
     return {

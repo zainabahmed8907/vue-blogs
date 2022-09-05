@@ -2,46 +2,56 @@
   <header>
     <nav class="container">
       <div class="branding">
-        <router-link class="header" :to="{ name: 'Home' }"
+        <router-link class="header" :to="{ name: 'HomeView' }"
           >FireBlogs</router-link
         >
       </div>
       <div class="nav-links">
         <ul v-show="!mobile">
-          <router-link class="link" to="#">Home</router-link>
+          <router-link class="link" :to="{ name: 'HomeView' }"
+            >Home</router-link
+          >
 
-          <router-link class="link" to="#">Blogs</router-link>
+          <router-link class="link" :to="{ name: 'BlogView' }"
+            >Blogs</router-link
+          >
 
           <router-link class="link" to="#">Create Post</router-link>
 
-          <router-link class="link" to="#">Login/Register</router-link>
+          <router-link class="link" :to="{ name: 'BlogsLogin' }"
+            >Login/Register</router-link
+          >
         </ul>
       </div>
     </nav>
-    <menuIcon class="menu-icon" @click="toggleMobileNav" v-show="mobile" />
+    <div class="menu-icon">
+      <img
+        src="../assets/Icons/bars-regular.svg"
+        @click="toggleMobileNav"
+        v-show="mobile"
+      />
+    </div>
 
     <transition name="mobile-nav">
       <ul class="mobile-nav" v-show="mobileNav">
-        <router-link class="link" to="#">Home</router-link>
+        <router-link class="link" :to="{ name: 'HomeView' }">Home</router-link>
 
-        <router-link class="link" to="#">Blogs</router-link>
+        <router-link class="link" :to="{ name: 'BlogView' }">Blogs</router-link>
 
         <router-link class="link" to="#">Create Post</router-link>
 
-        <router-link class="link" to="#">Register</router-link>
+        <router-link class="link" :to="{ name: 'BlogsLogin' }"
+          >Register</router-link
+        >
       </ul>
     </transition>
   </header>
 </template>
 
 <script>
-import menuIcon from "../assets/Icons/bars-regular.svg";
-
 export default {
   name: "navigation-comp",
-  components: {
-    menuIcon,
-  },
+
   data() {
     return {
       mobile: null,

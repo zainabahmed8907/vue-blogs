@@ -7,11 +7,19 @@
         <p v-if="post.welcomeScreen">{{ post.blogPost }}</p>
         <p class="content-preview" v-else>{{ post.blogHTML }}</p>
         <router-link class="link link-light" v-if="post.welcomeScreen" to="#"
-          >Login/Register<Arrow class="arrow arrow-light"
+          >Login/Register
+          <img
+            class="arrow arrow-light"
+            src="../assets/Icons/arrow-right-light.svg"
         /></router-link>
         <router-link v-else class="link" to="#"
-          >View the Post<Arrow class="arrow"
-        /></router-link>
+          >View the Post
+
+          <img
+            class="arrow arrow-light"
+            src="../assets/Icons/arrow-right-light.svg"
+          />
+        </router-link>
       </div>
     </div>
     <div class="blog-photo">
@@ -30,13 +38,10 @@
 </template>
 
 <script>
-import Arrow from "../assets/Icons/arrow-right-light.svg";
 export default {
   name: "FireBlogsYouTubeBlogPost",
   props: ["post"],
-  components: {
-    Arrow,
-  },
+
   data() {
     return {};
   },

@@ -3,34 +3,50 @@
     <div class="container">
       <div class="left">
         <div class="col-1">
-          <router-link class="header" :to="{ name: 'Home' }"
+          <router-link class="header" :to="{ name: 'HomeView' }"
             >FireBlogs</router-link
           >
           <ul>
             <li>
-              <a href="#"><youTube class="svg-icon" /></a>
+              <a href="#"
+                ><span class="svg-icon"
+                  ><img src="../assets/Icons/youtube-brands.svg" /></span
+              ></a>
             </li>
             <li>
-              <a href="#"><twitter class="svg-icon" /></a>
+              <a href="#">
+                <span class="svg-icon"
+                  ><img src="../assets/Icons/twitter-brands.svg" /></span
+              ></a>
             </li>
             <li>
-              <a href="#"><instagram class="svg-icon" /></a>
+              <a href="#">
+                <span class="svg-icon"
+                  ><img src="../assets/Icons/instagram-brands.svg"
+                /></span>
+              </a>
             </li>
             <li>
-              <a href="#"><linkedin class="svg-icon" /></a>
+              <a href="#">
+                <span class="svg-icon"
+                  ><img src="../assets/Icons/linkedin-brands.svg"
+                /></span>
+              </a>
             </li>
           </ul>
         </div>
         <div class="col-2">
           <ul>
-            <router-link class="link" :to="{ name: 'Home' }">Home</router-link>
-            <router-link class="link" :to="{ name: 'Blogs' }"
+            <router-link class="link" :to="{ name: 'HomeView' }"
+              >Home</router-link
+            >
+            <router-link class="link" :to="{ name: 'BlogView' }"
               >Blogs</router-link
             >
             <router-link class="link" :to="{ name: 'CreatePost' }"
               >Create Post</router-link
             >
-            <router-link class="link" :to="{ name: 'Login' }"
+            <router-link class="link" :to="{ name: 'BlogsLogin' }"
               >Login In / Register</router-link
             >
           </ul>
@@ -44,18 +60,8 @@
 </template>
 
 <script>
-import youTube from "../assets/Icons/youtube-brands.svg";
-import instagram from "../assets/Icons/instagram-brands.svg";
-import linkedin from "../assets/Icons/linkedin-brands.svg";
-import twitter from "../assets/Icons/twitter-brands.svg";
 export default {
   name: "FireBlogsYouTubeFooterComp",
-  components: {
-    youTube,
-    instagram,
-    linkedin,
-    twitter,
-  },
   data() {
     return {};
   },
